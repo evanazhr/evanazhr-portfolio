@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     title: "Evan Azhar Hartana – Developer Portfolio",
     description:
       "Saya sedang membangun fondasi kuat dalam pengembangan web. Lihat proyek-proyek dan teknologi yang saya pelajari.",
-    url: "https://evanazhr.vercel.app", // ganti dengan domainmu
+    url: "https://evanazhr.vercel.app", 
     siteName: "Evan Azhar Hartana",
     images: [
       {

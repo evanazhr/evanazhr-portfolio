@@ -24,8 +24,9 @@ export default function Home() {
             </div>
           </div>
           <div className="flex items-center justify-center">
-            <Image src={"/assets/image/gradient.png"} alt="gradient-bg" width={20} height={20} className="size-100 top 0 left-[2%] -z-10 absolute"></Image>
-            <Image src={'/assets/image/avatar.jpg'} alt="hero-avatar" width={20} height={20} className="size-50 rounded-full shadow-md shadow-primary " />
+            <Image src={"/assets/image/gradient.png"} alt="gradient-bg" width={400} height={400} className="size-100 top 0 left-[2%] -z-10 absolute"></Image>
+            <Image src={'/assets/image/avatar.jpg'} alt="hero-avatar" width={400} height={400} quality={100} priority
+              className="size-50 rounded-full shadow-md shadow-primary " />
 
           </div>
 
@@ -56,9 +57,9 @@ export default function Home() {
 
       <section id="project" className="px-4 md:px-8 py-8 container mx-auto">
         <div className="text-base flex flex-col gap-8">
-            <h1 className="text-3xl font-bold">Projects</h1>
+          <h1 className="text-3xl font-bold">Projects</h1>
           <div className="gap-4 flex flex-col">
-          <p>Beberapa Project yang pernah saya buat</p>
+            <p>Beberapa Project yang pernah saya buat</p>
             <Project />
           </div>
 
