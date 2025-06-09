@@ -1,8 +1,6 @@
 import Image from "next/image";
 import {
   Card,
-  CardAction,
-  CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
