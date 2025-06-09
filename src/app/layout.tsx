@@ -79,7 +79,7 @@ export default function RootLayout({
           <header className="fixed bottom-0 md:bottom-auto  md:top-0 bg-background/50 z-50 md:backdrop-blur-lg left-0 w-full z-50  ">
             <Navbar />
           </header>
-          <main className="pt-20">
+          <main className="pt-20 max-w-7xl mx-auto">
             {children}
           </main>
           <footer>
