@@ -42,6 +42,7 @@ export default function Home() {
         </div>
       </section>
 
+
       {/* Tech Stack */}
       <section className="px-4 md:px-8 py-4 md:py-8 container mx-auto">
         <div className="text-base flex flex-col gap-8">
