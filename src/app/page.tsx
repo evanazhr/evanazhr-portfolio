@@ -15,7 +15,7 @@ export default function Home() {
         <div className="flex md:flex-row-reverse flex-col justify-center items-center gap-8 md:gap-16">
 
           <div className="flex flex-col gap-2 md:justify-center items-center md:items-start order-2 md:order-0">
-            <p className="text-2xl">Hi <span className=" animate-[wiggle_1s_ease-in-out_infinite]">👋</span>, I'm </p>
+            <p className="text-2xl">Hi <span className=" animate-[wiggle_1s_ease-in-out_infinite]">👋</span>, I&apos;m </p>
 
             <h1 className="text-3xl font-bold md:text-5xl">Evan Azhar Hartana</h1>
             <p className="text-md font-semibold text-primary">Learner | Student | Developer</p>

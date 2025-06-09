@@ -4,7 +4,7 @@ import { IoLogoInstagram, IoLogoLinkedin, IoLogoGithub } from "react-icons/io5";
 
 
 export default function Contact({ withName }: { withName: boolean }) {
-    const [isWithName, setIsWithName] = useState(withName)
+    const [isWithName] = useState(withName)
     return (
         <>
             {

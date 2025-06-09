@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/Button"
 
 
 const ModeToggle = ({variant}: {variant: "link" | "default" | "destructive" | "outline" | "secondary" | "ghost" | null | undefined}) => {
-  const { theme, setTheme, resolvedTheme } = useTheme()
+  const { setTheme, resolvedTheme } = useTheme()
 
   // Gunakan `resolvedTheme` agar kita tahu tema yang sedang aktif (termasuk saat "system")
   const isDark = resolvedTheme === "dark"
