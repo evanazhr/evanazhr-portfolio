@@ -1,7 +1,7 @@
 import TechIcon from '@/components/TechIcon'
 
 import { IoLogoHtml5, IoLogoCss3 } from "react-icons/io";
-import { IoLogoJavascript, IoLogoReact } from "react-icons/io5";
+import { IoLogoReact } from "react-icons/io5";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { SiTypescript, SiJavascript } from "react-icons/si";
 import { SiVuedotjs } from "react-icons/si";
