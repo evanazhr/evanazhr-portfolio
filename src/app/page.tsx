@@ -13,7 +13,7 @@ export default function Home() {
       <FadeInSection>
 
         <section className="px-4 md:px-8 relative md:py-20 container mx-auto">
-          <Image src={"/assets/image/gradient.png"} alt="gradient-bg" width={400} height={400} className="size-100 top 0 left-[2%] -z-10 absolute"></Image>
+          <Image src={"/assets/image/gradient.png"} alt="gradient-bg" width={400} height={400} className="size-100 top-0 left-[2%] -z-10 absolute"></Image>
 
           <div className="flex md:flex-row-reverse flex-col justify-center items-center gap-8 md:gap-16">
 
@@ -73,19 +73,6 @@ export default function Home() {
 
         </div>
       </section>
-
-      {/* Contact Section */}
-
-      {/* <FadeInSection>
-        <section id="contact" className="px-4 md:px-8 md:py-4 container mx-auto">
-          <div className="text-base flex flex-col text-center justify-center items-center gap-8  rounded-xl py-20 bg-card">
-            <h1 className="text-3xl font-bold">Contact</h1>
-            <div>
-              <Contact withName={true} />
-            </div>
-          </div>
-        </section>
-      </FadeInSection> */}
 
 
     </div>
