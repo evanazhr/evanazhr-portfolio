@@ -23,7 +23,7 @@ export default function Project() {
             thumbnail: "/assets/image/gradient.png",
             link: "",
             repo: "https://github.com/evanazhr/simple-pos_nextjs.git",
-            tech: ["Next.Js", "Typescript", "Tailwind"],
+            tech: ["Next.Js", "React.Js","Typescript", "Tailwind"],
         },
         {
             title: "Suxz Landing Page",
@@ -43,10 +43,20 @@ export default function Project() {
             repo: "https://github.com/evanazhr/landing-page-kocheng.git",
             tech: ["Vue.Js", "Tailwind"],
 
-        }, {
+        }, 
+        {
+            title: "E-wallet Kusaku",
+            description: "UI E-wallet fiktif Kusaku, dibuat dengan NextJs dan Tailwindcss",
+            id: 4,
+            thumbnail: "/assets/image/gradient.png",
+            link: "",
+            repo: "https://github.com/evanazhr/kusaku-ui-nextjs.git",
+            tech: ["Next.Js", "React.Js","Typescript", "Tailwind"],
+        },
+        {
             title: "Bouncing Hello World",
             description: "Just Bouncing Hello World, hehe :3",
-            id: 4,
+            id: 5,
             thumbnail: "/assets/thumbnails/bouncing-hello-world.png",
             link: "https://bounced-hello-world.vercel.app/",
             repo: "https://github.com/evanazhr/hello-world.git",
@@ -111,7 +121,7 @@ export default function Project() {
                                 </a> : null}
                                </div>
 
-                                <div className="flex flex-row gap-2">
+                                <div className="flex flex-row items-center gap-2">
                                     {item.tech?.map((tech, index) => {
                                         return (
                                             <div key={index} title={tech}>
