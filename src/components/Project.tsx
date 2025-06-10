@@ -1,4 +1,7 @@
+import ScaleUp from '@/components/animation/ScaleUp'
+
 import Image from "next/image";
+
 import {
     Card,
     CardDescription,
@@ -40,66 +43,68 @@ export default function Project() {
         // Add more project items as needed
     ];
 
-    const techIcons = (tech: string, size:number) => {
+    const techIcons = (tech: string, size: number) => {
         const iconMap: Record<string, string> = {
-          HTML: "/assets/icons/html-5.svg",
-          CSS: "/assets/icons/css-3.svg",
-          Javascript: "/assets/icons/javascript.svg",
-          "React.Js": "/assets/icons/react.svg",
-          "Vue.Js": "/assets/icons/vue.svg",
-          "Next.Js": "/assets/icons/next.svg",
-          Tailwind: "/assets/icons/tailwind-css.svg",
-          TypeScript: "/assets/icons/typescript.svg",
+            HTML: "/assets/icons/html-5.svg",
+            CSS: "/assets/icons/css-3.svg",
+            Javascript: "/assets/icons/javascript.svg",
+            "React.Js": "/assets/icons/react.svg",
+            "Vue.Js": "/assets/icons/vue.svg",
+            "Next.Js": "/assets/icons/next.svg",
+            Tailwind: "/assets/icons/tailwind-css.svg",
+            TypeScript: "/assets/icons/typescript.svg",
         };
-      
+
         const src = iconMap[tech];
         return src ? (
-          <Image
-            src={src}
-            alt={tech}
-            width={size}
-            height={size}
-            title={tech}
-            className="opacity-80 hover:opacity-100 transition"
-          />
+            <Image
+                src={src}
+                alt={tech}
+                width={size}
+                height={size}
+                title={tech}
+                className="opacity-80 hover:opacity-100 transition"
+            />
         ) : null;
-      };
-      
+    };
+
 
     return (
-        <div className=" w-full grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-4">
+        <div className=" w-full grid grid-cols-1 md:grid-cols-4  gap-4">
             {
-                projectItems.map((item) => (
-                    <Card key={item.id} className="overflow-hidden shadow-lg transition-transform transform hover:scale-105 active:scale-105 duration-300 ease-in-out">
-                        <CardHeader>
-                            <div className="relative rounded-xl w-full h-48 mb-4 overflow-hidden">
-                                <Image
-                                    src={item.thumbnail}
-                                    className="object-fit object-cover"
-                                    alt={`${item.title} project image`}
-                                    layout="fill"
-                                    objectFit="cover"
-                                />
-                            </div>
-                            <CardTitle>{item.title}</CardTitle>
-                            <CardDescription>{item.description}</CardDescription>
-                        </CardHeader>
-                        <CardFooter className="flex flex-col items-start justify-center gap-4">
-                            <a target="_blank" href={item.link} rel="noopener noreferrer" className="text-primary flex gap-2 justify-center items-center hover:underline active:underline">
-                                View Project <FaExternalLinkAlt />
-                
-                            </a>
-                            <div className="flex flex-row gap-2">
-                                {item.tech?.map((tech, index)=>{
-                                    return (
-                                        <div key={index} title={tech}>
-                                            {techIcons(tech, 24)}
-                                        </div>
-                                    )
-                                })}
-                            </div>
-                        </CardFooter>
-                    </Card>
+                projectItems.map((item, index) => (
+                    <ScaleUp key={item.id} delay={index}>
+                        <Card className="overflow-hidden shadow-lg transition-transform transform hover:scale-105 active:scale-105 duration-300 ease-in-out">
+                            <CardHeader>
+                                <div className="relative rounded-xl w-full h-48 mb-4 overflow-hidden">
+                                    <Image
+                                        src={item.thumbnail}
+                                        className="object-fit object-cover"
+                                        alt={`${item.title} project image`}
+                                        layout="fill"
+                                        objectFit="cover"
+                                    />
+                                </div>
+                                <CardTitle>{item.title}</CardTitle>
+                                <CardDescription>{item.description}</CardDescription>
+                            </CardHeader>
+                            <CardFooter className="flex flex-col items-start justify-center gap-4">
+                                <a target="_blank" href={item.link} rel="noopener noreferrer" className="text-primary flex gap-2 justify-center items-center hover:underline active:underline">
+                                    View Project <FaExternalLinkAlt />
+
+                                </a>
+                                <div className="flex flex-row gap-2">
+                                    {item.tech?.map((tech, index) => {
+                                        return (
+                                            <div key={index} title={tech}>
+                                                {techIcons(tech, 24)}
+                                            </div>
+                                        )
+                                    })}
+                                </div>
+                            </CardFooter>
+                        </Card>
+                    </ScaleUp>
 
                 ))
             }

@@ -1,4 +1,5 @@
 import TechIcon from '@/components/TechIcon'
+import ScaleUp from '@/components/animation/ScaleUp'
 
 import { IoLogoHtml5, IoLogoCss3 } from "react-icons/io";
 import { IoLogoReact } from "react-icons/io5";
@@ -46,11 +47,13 @@ export default function TechIcons() {
     ]
 
     return (
-        <div className='grid grid-cols-4 gap-2 mt-4 md:mt-8 '>
+        <div className='grid grid-cols-4 md:grid-cols-6 gap-2 mt-4 md:mt-8 '>
             {techIconItem.map((item, index) => (
-                <TechIcon key={index} name={item.name}>
-                    {item.icon}
-                </TechIcon>
+                <ScaleUp key={index} delay={index}>
+                    <TechIcon name={item.name}>
+                        {item.icon}
+                    </TechIcon>
+                </ScaleUp>
             ))}
 
 
