@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  verification: {
+    google: "qRP_Wzl_Uuw0RswTGhSKSUKmG_HhFJhLA7HVjWhYWKU",
+  },
   title: {
     default: "Evan Azhar Hartana – Developer Portfolio",
     template: "%s | Evan Azhar Hartana",
@@ -38,7 +41,7 @@ export const metadata: Metadata = {
     title: "Evan Azhar Hartana – Developer Portfolio",
     description:
       "Saya sedang membangun fondasi kuat dalam pengembangan web. Lihat proyek-proyek dan teknologi yang saya pelajari.",
-    url: "https://evanazhr.vercel.app", 
+    url: "https://evanazhr.vercel.app",
     siteName: "Evan Azhar Hartana",
     images: [
       {
@@ -65,7 +68,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-
+    
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
       >
