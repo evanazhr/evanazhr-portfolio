@@ -61,31 +61,32 @@ export default function Navbar() {
       }
     ]
   return (
-    <>
-      <div className="px-4 hidden md:block md:px-8 container mx-auto py-2">
-        <div className="flex justify-between items-center">
-          <ScaleUp delay={1}>
-            <a href={'#'} className="font-semibold text-xl">evanazh</a>
-          </ScaleUp>
-          <ul className="flex gap-2">
-            {navbarItem.map((item, index) => {
-              return (
-                <ScaleUp key={index} delay={index}>
-                  <li >
-                    <a
-                      className="hover:bg-primary flex items-center justify-center gap-2 rounded-md duration-300 hover:text-primary-foreground px-4 py-2"
-                      href={item.href}>{item.icon}{item.title}</a>
-                  </li>
-                </ScaleUp>
-              )
-            })}
+    <header className="fixed bottom-0 md:bottom-auto  md:top-0  z-50 left-0 w-full z-50  ">
 
-          </ul>
-          <ScaleUp delay={4}>
-            <ModeToggle variant={'link'} />
-          </ScaleUp>
+      <ScaleUp delay={0.5}>
+        <div className="px-4 hidden md:block md:px-8 container  mx-auto ">
+          <div className="flex justify-center w-fit mx-auto gap-8 px-4 rounded-full overflow-hidden mt-2 items-center border-1 py-2 bg-background/50 md:backdrop-blur">
+
+            <ul className="flex gap-2">
+              {navbarItem.map((item, index) => {
+                return (
+                  <ScaleUp key={index} delay={index}>
+                    <li >
+                      <a
+                        className="hover:bg-primary flex items-center justify-center gap-2 rounded-full duration-300 hover:text-foreground px-4 py-2"
+                        href={item.href}>{item.icon}{item.title}</a>
+                    </li>
+                  </ScaleUp>
+                )
+              })}
+
+            </ul>
+            <ScaleUp delay={4}>
+              <ModeToggle variant={'link'} />
+            </ScaleUp>
+          </div>
         </div>
-      </div>
+      </ScaleUp>
 
 
       {/* Nav Mobile */}
@@ -120,6 +121,6 @@ export default function Navbar() {
         </div>
 
       </motion.div>
-    </>
+    </header >
   )
 }
