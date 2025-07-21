@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 export default function WavingHand() {
   return (
@@ -12,9 +12,9 @@ export default function WavingHand() {
         repeat: Infinity,
         repeatDelay: 2,
         duration: 1,
-        ease: 'easeInOut'
+        ease: "easeInOut",
       }}
-      style={{ display: 'inline-block', transformOrigin: '70% 70%' }}
+      style={{ display: "inline-block", transformOrigin: "70% 70%" }}
     >
       👋
     </motion.span>

@@ -1,12 +1,11 @@
 {
-    "buildCommand": "npm run build",
-    "outputDirectory": ".next",
-    "framework": "nextjs",
-    "rewrites": [
-      {
-        "source": "/",
-        "destination": "/index"
-      }
-    ]
-  }
-  
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "framework": "nextjs",
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/index"
+    }
+  ]
+}

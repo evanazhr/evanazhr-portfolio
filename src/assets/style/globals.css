@@ -69,7 +69,6 @@
   --sidebar-ring: oklch(0.554 0.135 66.442);
 }
 
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -96,6 +95,23 @@
     }
     50% {
       transform: rotate(3deg);
+    }
+  }
+
+  --animate-float: float 4s ease-in-out infinite;
+
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    25% {
+      transform: translateY(10);
+    }
+    50% {
+      transfrom: translateY(-10);
+    }
+    100% {
+      transform: translateY(0);
     }
   }
 }

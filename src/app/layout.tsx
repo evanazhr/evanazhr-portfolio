@@ -4,7 +4,6 @@ import Footer from "@/components/Footer";
 import ThemeProvider from "@/lib/theme-provider";
 import "@/assets/style/globals.css";
 
-
 export const metadata: Metadata = {
   verification: {
     google: "qRP_Wzl_Uuw0RswTGhSKSUKmG_HhFJhLA7HVjWhYWKU",
@@ -51,24 +50,22 @@ export const metadata: Metadata = {
   },
 };
 
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en" className="scroll-smooth">
-
-      <body
-        className={`antialiased bg-background text-foreground`}
-      >
+      <body className={`antialiased bg-background text-foreground`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-
           <Navbar />
           <main>
             {children}
