@@ -106,7 +106,7 @@ export default function Navbar() {
               <a
                 href={item.href}
                 key={index}
-                className="rounded-full hover:bg-primary p-2"
+                className="rounded-full hover:bg-primary p-2 duration-300 transition-all"
               >
                 <div className=" flex items-center justify-center">
                   {item.icon}
