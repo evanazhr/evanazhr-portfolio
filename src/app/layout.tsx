@@ -1,10 +1,28 @@
 import type { Metadata } from "next";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 import ThemeProvider from "@/lib/theme-provider";
 import "@/assets/style/globals.css";
+import { Geist, Geist_Mono, Montserrat } from "next/font/google";
+import { cn } from "@/lib/utils";
+
+const montserratHeading = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-heading",
+});
+
+const geistSans = Geist({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
+
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+});
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://evanazhr.vercel.app"),
   verification: {
     google: "qRP_Wzl_Uuw0RswTGhSKSUKmG_HhFJhLA7HVjWhYWKU",
   },
@@ -34,7 +52,7 @@ export const metadata: Metadata = {
     siteName: "Evan Azhar Hartana",
     images: [
       {
-        url: "/assets/image/avatar.jpg",
+        url: "/assets/image/avatar.jpeg",
         width: 800,
         height: 600,
         alt: "Evan Azhar Hartana",
@@ -43,6 +61,14 @@ export const metadata: Metadata = {
     locale: "id_ID",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Evan Azhar Hartana – Developer Portfolio",
+    description:
+      "Saya sedang membangun fondasi kuat dalam pengembangan web. Lihat proyek-proyek dan teknologi yang saya pelajari.",
+    images: ["/assets/image/avatar.jpeg"],
+    creator: "@evanazhr",
+  },
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
@@ -50,16 +76,40 @@ export const metadata: Metadata = {
   },
 };
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Evan Azhar Hartana",
+    url: "https://evanazhr.vercel.app",
+    image: "https://evanazhr.vercel.app/assets/image/avatar.jpeg",
+    jobTitle: "Fullstack Web Developer",
+    sameAs: [
+      "https://github.com/evanazhr",
+      "https://linkedin.com/in/evan-azhar-hartana-151434365",
+      "https://www.instagram.com/evanazh/",
+    ],
+  };
 
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`antialiased bg-background text-foreground`}>
+    <html
+      lang="id"
+      className={cn(
+        "scroll-smooth",
+        geistSans.variable,
+        geistMono.variable,
+        montserratHeading.variable
+      )}
+    >
+      <body className="antialiased bg-background text-foreground relative min-h-screen">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -67,9 +117,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          <main>
-            {children}
-          </main>
+          <main>{children}</main>
           <footer>
             <Footer />
           </footer>
@@ -78,3 +126,4 @@ export default function RootLayout({
     </html>
   );
 }
+

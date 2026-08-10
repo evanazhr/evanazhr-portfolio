@@ -1,5 +1,5 @@
+"use client";
 import ScaleUp from "@/components/animation/ScaleUp";
-
 import Image from "next/image";
 
 type iconType = {
@@ -10,11 +10,11 @@ type iconType = {
 function TechIcon({ children, name }: iconType) {
   return (
     <div
-      className="flex flex-col items-center relative justify-center hover:text-primary border border-card group gap-2 bg-card active:text-primary active:shadow-md active:shadow-primary  aspect-square p-10 rounded-md shadow-md hover:bg-card duration-300 hover:text-card hover:border-card hover:shadow-md hover:shadow-primary "
+      className="flex flex-col items-center justify-center p-3 md:p-5 rounded-xl border border-border/40 bg-card/30 backdrop-blur-sm aspect-square hover:border-primary hover:shadow-md hover:shadow-primary/5 transition-all duration-300 hover:scale-105 group cursor-pointer"
       title={name}
     >
       {children}
-      <p className="group-hover:opacity-100 group-active:opaciity-100 duration-300 opacity-0 text-center bottom-2 font-semibold text-sm absolute">
+      <p className="mt-2.5 text-center text-[10px] md:text-xs font-medium text-muted-foreground group-hover:text-primary transition-colors duration-200">
         {name}
       </p>
     </div>
@@ -58,17 +58,19 @@ export default function TechIcons() {
   ];
 
   return (
-    <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4 mt-4 md:mt-8 ">
+    <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4 mt-4 md:mt-8">
       {techIconItem.map((item, index) => (
         <ScaleUp key={index} delay={index}>
           <TechIcon name={item.name}>
-            <Image
-              src={item.icon}
-              width={30}
-              height={30}
-              alt={item.name}
-              className="size-full"
-            />
+            <div className="relative size-10 md:size-12 flex items-center justify-center">
+              <Image
+                src={item.icon}
+                width={48}
+                height={48}
+                alt={`${item.name} logo icon`}
+                className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"
+              />
+            </div>
           </TechIcon>
         </ScaleUp>
       ))}
