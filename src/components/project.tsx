@@ -10,69 +10,13 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { FaExternalLinkAlt, FaCode } from "react-icons/fa";
+import { projectItems } from "@/data/projects";
+import { techRegistry } from "@/data/tech-stack";
 
 export default function Project() {
-  const projectItems = [
-    {
-      title: "Aplikasi Kasir NextJs",
-      description:
-        "Aplikasi kasir modern yang dibuat dengan Next.js dan TypeScript. Dilengkapi fitur autentikasi aman dengan Clerk, integrasi payment gateway Xendit, dan manajemen stok produk secara real-time.",
-      thumbnail: "/assets/thumbnails/pos-dashboard.png",
-      link: "",
-      repo: "https://github.com/evanazhr/simple-pos_nextjs.git",
-      tech: ["NextJs", "React", "Typescript", "TailwindCSS"],
-    },
-    {
-      title: "Collosal Landing Page",
-      description:
-        "Slicing antarmuka web modern berkinerja tinggi untuk Landing Page Agensi Kreatif 'Collosal' berdasarkan desain profesional dari codedesign.dev.",
-      thumbnail: "/assets/thumbnails/collosal.png",
-      link: "https://collosal-landing-page-three.vercel.app/",
-      repo: "https://github.com/evanazhr/collosal-landing-page.git",
-      tech: ["NextJs", "React", "Typescript", "TailwindCSS"],
-    },
-    {
-      title: "Suxz Landing Page",
-      description:
-        "Eksperimen pembelajaran slicing antarmuka platform e-learning 'Suxz' menggunakan framework Vue.js dengan gaya visual minimalis dan responsif.",
-      thumbnail: "/assets/thumbnails/suxz.png",
-      link: "https://suxz-codedesign-dev.vercel.app/",
-      repo: "https://github.com/evanazhr/suxz-codedesign.dev.git",
-      tech: ["Javascript", "VueJs", "TailwindCSS"],
-    },
-    {
-      title: "Simple Realtime Chat App",
-      description:
-        "Aplikasi ruang obrolan (chatting) terdistribusi yang bekerja secara real-time menggunakan protokol komunikasi WebSocket dengan desain antarmuka modern.",
-      thumbnail: "/assets/thumbnails/chat-app-ui.png",
-      link: "",
-      repo: "https://github.com/evanazhr/simple-realtime-chat-app.git",
-      tech: ["Javascript", "TailwindCSS"],
-    },
-    {
-      title: "Bouncing Hello World",
-      description:
-        "Sebuah proyek eksperimen fisika kanvas sederhana yang memantulkan teks 'Hello World' di layar menggunakan teknologi dasar HTML dan CSS vanilla.",
-      thumbnail: "/assets/thumbnails/bouncing-hello-world.png",
-      link: "https://bounced-hello-world.vercel.app/",
-      repo: "https://github.com/evanazhr/hello-world.git",
-      tech: ["HTML", "CSS"],
-    },
-  ];
-
   const techIcons = (tech: string) => {
-    const iconMap: Record<string, string> = {
-      HTML: "/assets/icons/html-5.svg",
-      CSS: "/assets/icons/css-3.svg",
-      Javascript: "/assets/icons/javascript.svg",
-      React: "/assets/icons/react.svg",
-      VueJs: "/assets/icons/vue.svg",
-      NextJs: "/assets/icons/next-js.svg",
-      TailwindCSS: "/assets/icons/tailwind-css.svg",
-      Typescript: "/assets/icons/typescript.svg",
-    };
-
-    const src = iconMap[tech];
+    // Ambil path icon secara dinamis dari techRegistry terpusat
+    const src = techRegistry[tech];
     return src ? (
       <Image
         src={src}

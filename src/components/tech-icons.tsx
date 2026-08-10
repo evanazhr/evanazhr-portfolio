@@ -1,6 +1,7 @@
 "use client";
 import ScaleUp from "@/components/animation/ScaleUp";
 import Image from "next/image";
+import { techRegistry, featuredTechStack } from "@/data/tech-stack";
 
 type iconType = {
   children: React.ReactNode;
@@ -22,40 +23,11 @@ function TechIcon({ children, name }: iconType) {
 }
 
 export default function TechIcons() {
-  const techIconItem = [
-    {
-      name: "HTML",
-      icon: "/assets/icons/html-5.svg",
-    },
-    {
-      name: "CSS",
-      icon: "/assets/icons/css-3.svg",
-    },
-    {
-      name: "Javascript",
-      icon: "/assets/icons/javascript.svg",
-    },
-    {
-      name: "TailwindCSS",
-      icon: "/assets/icons/tailwind-css.svg",
-    },
-    {
-      name: "Typescript",
-      icon: "/assets/icons/typescript.svg",
-    },
-    {
-      name: "VueJs",
-      icon: "/assets/icons/vue.svg",
-    },
-    {
-      name: "React",
-      icon: "/assets/icons/react.svg",
-    },
-    {
-      name: "NextJs",
-      icon: "/assets/icons/next-js.svg",
-    },
-  ];
+  // Map featured tech names to their registered icons
+  const techIconItem = featuredTechStack.map((name) => ({
+    name,
+    icon: techRegistry[name] || "/assets/icons/default.svg", // Fallback if icon is missing
+  }));
 
   return (
     <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4 mt-4 md:mt-8">
