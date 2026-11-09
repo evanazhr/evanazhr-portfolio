@@ -34,10 +34,10 @@ export default function Project() {
       {projectItems.map((item, index) => (
         <ScaleUp key={index} delay={index}>
           <SpotlightCard
-            className="custom-spotlight-card flex flex-col rounded-xl min-h-full"
+            className="custom-spotlight-card flex flex-col rounded-lg min-h-full"
             spotlightColor="rgba(127, 255, 0, 0.15)"
           >
-            <Card className="overflow-hidden pt-0 justify-between shadow-md hover:shadow-xl transition-all duration-300 ease-in-out flex-grow bg-card/40 backdrop-blur-sm border-border/30 rounded-xl flex flex-col">
+            <Card className="overflow-hidden pt-0 justify-between shadow-md hover:shadow-xl transition-all duration-300 ease-in-out flex-grow bg-card/40 backdrop-blur-sm border-border/30 rounded-lg flex flex-col">
               <CardHeader className="px-0 pt-0">
                 <div className="overflow-hidden aspect-video w-full relative">
                   <Image

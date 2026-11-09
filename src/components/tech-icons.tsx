@@ -11,7 +11,7 @@ type iconType = {
 function TechIcon({ children, name }: iconType) {
   return (
     <div
-      className="flex flex-col items-center justify-center p-3 md:p-5 rounded-xl border border-border/40 bg-card/30 backdrop-blur-sm aspect-square hover:border-primary hover:shadow-md hover:shadow-primary/5 transition-all duration-300 hover:scale-105 group cursor-pointer"
+      className="flex flex-col items-center justify-center p-3 md:p-5 rounded-lg border border-border/40 bg-card/30 backdrop-blur-sm aspect-square hover:border-primary hover:shadow-md hover:shadow-primary/5 transition-all duration-300 hover:scale-105 group cursor-pointer"
       title={name}
     >
       {children}

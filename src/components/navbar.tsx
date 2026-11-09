@@ -128,7 +128,7 @@ export default function Navbar() {
         transition={{ duration: 0.5, ease: "easeOut" }}
         className="px-4 hidden md:block md:px-8 container mx-auto"
       >
-        <div className="flex justify-center w-fit mx-auto gap-6 px-4 rounded-full mt-4 items-center border border-border/40 py-1.5 bg-background/60 backdrop-blur-md shadow-lg shadow-background/5">
+        <div className="flex justify-center w-fit mx-auto gap-6 px-4 rounded-lg mt-4 items-center border border-border/40 py-1.5 bg-background/60 backdrop-blur-md shadow-lg shadow-background/5">
           <ul className="flex gap-1.5">
             {navbarItem.map((item, index) => {
               const isActive = getIsActive(item.href);
@@ -137,7 +137,7 @@ export default function Navbar() {
                   <a
                     id={`nav-link-${item.title.toLowerCase()}`}
                     className={cn(
-                      "flex items-center justify-center gap-2 rounded-full duration-200 px-4 py-2 text-sm font-medium transition-all relative",
+                      "flex items-center justify-center gap-2 rounded-md duration-200 px-4 py-2 text-sm font-medium transition-all relative",
                       isActive
                         ? "text-primary-foreground font-semibold"
                         : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
@@ -147,7 +147,7 @@ export default function Navbar() {
                     {isActive && (
                       <motion.span
                         layoutId="activeNavBackground"
-                        className="absolute inset-0 bg-primary rounded-full -z-10 shadow-sm shadow-primary/20"
+                        className="absolute inset-0 bg-primary rounded-md -z-10 shadow-sm shadow-primary/20"
                         transition={{ type: "spring", stiffness: 380, damping: 30 }}
                       />
                     )}
@@ -168,7 +168,7 @@ export default function Navbar() {
         initial={{ scale: 0.8, y: 50, opacity: 0, x: "-50%" }}
         animate={{ scale: 1, y: 0, opacity: 1, x: "-50%" }}
         transition={{ duration: 0.4, ease: "easeOut" }}
-        className="fixed bottom-4 md:hidden left-1/2 border-border/40 p-1.5 rounded-full border bg-background/70 backdrop-blur-lg shadow-xl shadow-primary/10 flex gap-4 items-center"
+        className="fixed bottom-4 md:hidden left-1/2 border-border/40 p-1.5 rounded-lg border bg-background/70 backdrop-blur-lg shadow-xl shadow-primary/10 flex gap-4 items-center"
       >
         <div className="flex gap-1.5 items-center">
           {navbarItem.map((item, index) => {
@@ -179,7 +179,7 @@ export default function Navbar() {
                 key={index}
                 id={`mobile-nav-link-${item.title.toLowerCase()}`}
                 className={cn(
-                  "rounded-full p-2.5 duration-200 transition-all relative flex items-center justify-center size-10",
+                  "rounded-md p-2.5 duration-200 transition-all relative flex items-center justify-center size-10",
                   isActive
                     ? "text-primary-foreground"
                     : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
@@ -189,7 +189,7 @@ export default function Navbar() {
                 {isActive && (
                   <motion.span
                     layoutId="activeNavMobileBackground"
-                    className="absolute inset-0 bg-primary rounded-full -z-10 shadow-sm shadow-primary/20"
+                    className="absolute inset-0 bg-primary rounded-md -z-10 shadow-sm shadow-primary/20"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}

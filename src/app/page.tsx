@@ -1,6 +1,5 @@
 import Image from "next/image";
 import FadeInSection from '@/components/animation/FadeInSection'
-import WavingHand from '@/components/animation/WavingHand'
 import SquareBackground from '@/components/square-background'
 
 import TechIcons from "@/components/tech-icons";
@@ -21,32 +20,40 @@ export default function Home() {
       <FadeInSection>
         <section id="home" className="w-full min-h-[90vh] pt-16 md:pt-20 pb-10 flex items-center justify-center">
           <div className="container mx-auto max-w-5xl px-4 md:px-8">
-            <div className="flex md:flex-row-reverse flex-col justify-center items-center gap-10 md:gap-12">
-              <div className="relative flex items-center justify-center md:w-5/12">
-                <Image
-                  src="/assets/image/avatar.jpeg"
-                  alt="Evan Azhar Hartana Portrait"
-                  width={400}
-                  height={400}
-                  quality={100}
-                  priority
-                  className="size-60 md:size-80 aspect-square rounded-full shadow-xl object-cover border-4 border-card hover:scale-105 transition-transform duration-500 ease-out"
-                />
-                <Code className="absolute -top-5 -left-4 md:-left-6 md:-top-6 text-primary animate-float size-12 md:size-16 drop-shadow-[0_0_8px_rgba(var(--primary),0.5)]" />
-                <CodeXml className="absolute -bottom-5 -right-4 md:-right-6 md:-bottom-6 text-primary animate-float-delayed size-12 md:size-16 drop-shadow-[0_0_8px_rgba(var(--primary),0.5)]" />
+            <div className="border-border/50 bg-background/50 overflow-hidden rounded-lg border shadow-lg backdrop-blur-sm">
+              <div className="border-border/50 text-muted-foreground flex items-center gap-2 border-b px-4 py-3 font-mono text-xs">
+                <span className="text-primary" aria-hidden="true">●</span>
+                evan@portfolio:~
+                <span className="ml-auto">bash</span>
               </div>
-              <div className="flex flex-col md:w-7/12 gap-3 md:justify-center items-center md:items-start text-center md:text-left">
-                <p className="text-2xl md:text-4xl font-medium tracking-tight">
-                  Hi <WavingHand />, I&apos;m
-                </p>
-                <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground">
-                  Evan Azhar Hartana
-                </h1>
-                <p className="text-base md:text-xl font-semibold text-primary/95 max-w-md">
-                  Undergraduate Computer System Student | Fullstack Web Developer
-                </p>
-                <div className="text-3xl mt-4">
-                  <Contact withName={false} />
+              <div className="flex flex-col items-center justify-center gap-10 p-6 md:flex-row-reverse md:gap-12 md:p-10">
+                <div className="relative flex items-center justify-center md:w-5/12">
+                  <Image
+                    src="/assets/image/avatar.jpeg"
+                    alt="Evan Azhar Hartana Portrait"
+                    width={400}
+                    height={400}
+                    quality={100}
+                    priority
+                    className="border-card aspect-square size-60 rounded-full border-4 object-cover shadow-xl transition-transform duration-500 ease-out hover:scale-105 md:size-80"
+                  />
+                  <Code className="text-primary animate-float absolute -top-5 -left-4 size-12 drop-shadow-[0_0_8px_rgba(var(--primary),0.5)] md:-top-6 md:-left-6 md:size-16" />
+                  <CodeXml className="text-primary animate-float-delayed absolute -right-4 -bottom-5 size-12 drop-shadow-[0_0_8px_rgba(var(--primary),0.5)] md:-right-6 md:-bottom-6 md:size-16" />
+                </div>
+                <div className="flex flex-col items-center gap-3 text-center md:w-7/12 md:items-start md:justify-center md:text-left">
+                  <p className="text-muted-foreground font-mono text-lg font-medium tracking-tight md:text-2xl">
+                    <span className="text-primary">$</span> whoami
+                  </p>
+                  <h1 className="text-foreground text-4xl font-bold tracking-tight md:text-6xl">
+                    Evan Azhar Hartana
+                  </h1>
+                  <p className="text-primary/95 max-w-md text-base font-semibold md:text-xl">
+                    Undergraduate Computer System Student | Fullstack Web
+                    Developer
+                  </p>
+                  <div className="mt-4 text-3xl">
+                    <Contact withName={false} />
+                  </div>
                 </div>
               </div>
             </div>
@@ -58,8 +65,10 @@ export default function Home() {
       <FadeInSection>
         <section id="about" className="w-full">
           <div className="container mx-auto max-w-5xl px-4 md:px-8">
-            <div className="bg-card/30 backdrop-blur-sm border border-border/40 p-6 md:p-10 rounded-2xl shadow-sm">
-              <h2 className="text-3xl font-bold leading-[1.25]">Tentang Saya</h2>
+            <div className="bg-card/30 border-border/40 rounded-lg border p-6 shadow-sm backdrop-blur-sm md:p-10">
+              <h2 className="text-3xl leading-[1.25] font-bold">
+                <span className="text-primary font-mono">$</span> cat about.txt
+              </h2>
               <p className="text-justify text-base leading-[1.6] mt-4 text-muted-foreground">
                 Saya Evan, saya sedang belajar membangun fundamental dalam pengembangan web. Perjalanan saya dimulai dengan belajar HTML, CSS, dan JavaScript, dan sekarang saya sedang meningkatkan kemampuan saya dengan belajar framework Vue, React, dan Next.js. Saya bertujuan untuk menjadi seorang Fullstack Web Developer dan seorang Mobile App Developer.
               </p>
@@ -75,10 +84,10 @@ export default function Home() {
       <FadeInSection>
         <section id="tech" className="w-full">
           <div className="container mx-auto max-w-5xl px-4 md:px-8">
-            <Card className="bg-card/30 backdrop-blur-sm border-border/40 shadow-sm">
+            <Card className="bg-card/30 border-border/40 rounded-lg shadow-sm backdrop-blur-sm">
               <CardHeader className="md:px-8 pt-8">
                 <h2 className="text-3xl font-bold flex items-center gap-2">
-                  Tech Stack <Code className="size-8 text-primary" />
+                  <span className="text-primary font-mono">$</span> ls tech-stack/ <Code className="text-primary size-8" />
                 </h2>
                 <p className="text-base mt-2 text-muted-foreground">
                   Teknologi yang saya pelajari dan gunakan
@@ -97,7 +106,7 @@ export default function Home() {
         <section id="project" className="w-full py-10">
           <div className="container mx-auto max-w-5xl px-4 md:px-8">
             <div className="text-base flex flex-col gap-6">
-              <h2 className="text-3xl font-bold">Projects</h2>
+              <h2 className="text-3xl font-bold"><span className="text-primary font-mono">$</span> ls projects/</h2>
               <div className="gap-6 flex flex-col">
                 <p className="text-muted-foreground">
                   Beberapa Project yang pernah saya buat
