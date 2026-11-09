@@ -23,7 +23,7 @@ export default function Home() {
           className="flex min-h-[90vh] w-full items-center justify-center pt-16 pb-10 md:pt-20"
         >
           <div className="mx-auto max-w-5xl px-4 md:px-8">
-            <div className="border-border/50 bg-background/50 overflow-hidden rounded-lg border shadow-lg backdrop-blur-sm">
+            <div className="border-border/50 bg-background/50 overflow-hidden rounded-lg border shadow-lg backdrop-blur-sm dark:shadow-foreground/10">
               <div className="border-border/50 text-muted-foreground flex items-center gap-2 border-b px-4 py-3 font-mono text-xs">
                 <span className="text-primary" aria-hidden="true">
                   ●
@@ -40,7 +40,7 @@ export default function Home() {
                     height={400}
                     quality={100}
                     priority
-                    className="border-card aspect-square size-60 rounded-full border-4 object-cover shadow-xl transition-transform duration-500 ease-out hover:scale-105 md:size-80"
+                    className="border-card aspect-square size-60 rounded-full border-4 object-cover shadow-xl transition-transform duration-500 ease-out hover:scale-105 md:size-80 dark:shadow-foreground/20"
                   />
                   <Code className="text-primary animate-float absolute -top-5 -left-4 size-12 drop-shadow-[0_0_8px_rgba(var(--primary),0.5)] md:-top-6 md:-left-6 md:size-16" />
                   <CodeXml className="text-primary animate-float-delayed absolute -right-4 -bottom-5 size-12 drop-shadow-[0_0_8px_rgba(var(--primary),0.5)] md:-right-6 md:-bottom-6 md:size-16" />
@@ -70,7 +70,7 @@ export default function Home() {
       <FadeInSection>
         <section id="about" className="w-full">
           <div className="container mx-auto max-w-5xl px-4 md:px-8">
-            <div className="bg-card/30 border-border/40 rounded-lg border p-6 shadow-sm backdrop-blur-sm md:p-10">
+            <div className="bg-card/30 border-border/40 rounded-lg border p-6 shadow-sm backdrop-blur-sm md:p-10 dark:shadow-foreground/10">
               <h2 className="text-3xl leading-[1.25] font-bold">
                 <span className="text-primary font-mono">$</span> cat about.txt
               </h2>
@@ -98,7 +98,7 @@ export default function Home() {
       <FadeInSection>
         <section id="tech" className="w-full">
           <div className="container mx-auto max-w-5xl px-4 md:px-8">
-            <Card className="bg-card/30 border-border/40 rounded-lg shadow-sm backdrop-blur-sm">
+            <Card className="bg-card/30 border-border/40 rounded-lg shadow-sm backdrop-blur-sm dark:shadow-foreground/10">
               <CardHeader className="pt-8 md:px-8">
                 <h2 className="flex items-center gap-2 text-3xl font-bold">
                   <span className="text-primary font-mono">$</span> ls

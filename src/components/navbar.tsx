@@ -136,7 +136,7 @@ export default function Navbar() {
         transition={{ duration: 0.5, ease: "easeOut" }}
         className="container mx-auto hidden px-4 md:block md:px-8"
       >
-        <div className="border-border/40 bg-background/60 shadow-background/5 mx-auto mt-4 flex w-fit items-center justify-center gap-6 rounded-lg border px-4 py-1.5 shadow-lg backdrop-blur-md">
+        <div className="border-border/40 bg-background/60 shadow-background/5 mx-auto mt-4 flex w-fit items-center justify-center gap-6 rounded-lg border px-4 py-1.5 shadow-lg backdrop-blur-md dark:shadow-foreground/10">
           <ul className="flex gap-1.5">
             {navbarItem.map((item, index) => {
               const isActive = getIsActive(item.href);
@@ -182,7 +182,7 @@ export default function Navbar() {
         initial={{ scale: 0.8, y: 50, opacity: 0, x: "-50%" }}
         animate={{ scale: 1, y: 0, opacity: 1, x: "-50%" }}
         transition={{ duration: 0.4, ease: "easeOut" }}
-        className="border-border/40 bg-background/70 shadow-primary/10 fixed bottom-4 left-1/2 flex items-center gap-4 rounded-lg border p-1.5 shadow-xl backdrop-blur-lg md:hidden"
+        className="border-border/40 bg-background/70 shadow-primary/10 fixed bottom-4 left-1/2 flex items-center gap-4 rounded-lg border p-1.5 shadow-xl backdrop-blur-lg md:hidden dark:shadow-foreground/10"
       >
         <div className="flex items-center gap-1.5">
           {navbarItem.map((item, index) => {

@@ -37,7 +37,7 @@ export default function Project() {
             className="custom-spotlight-card flex min-h-full flex-col rounded-lg"
             spotlightColor="rgba(127, 255, 0, 0.15)"
           >
-              <Card className="bg-card/40 border-border/30 flex flex-grow flex-col justify-between overflow-hidden rounded-lg pt-0 shadow-md backdrop-blur-sm transition-all duration-300 ease-in-out hover:shadow-xl">
+              <Card className="bg-card/40 border-border/30 flex flex-grow flex-col justify-between overflow-hidden rounded-lg pt-0 shadow-md backdrop-blur-sm transition-all duration-300 ease-in-out hover:shadow-xl dark:shadow-foreground/10 dark:hover:shadow-foreground/20">
               <CardHeader className="px-0 pt-0">
                 <div className="relative aspect-video w-full overflow-hidden">
                   <Image
