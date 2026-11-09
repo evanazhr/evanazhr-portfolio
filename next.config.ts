@@ -3,8 +3,10 @@ import createMDX from '@next/mdx';
 
 const nextConfig: NextConfig = {
   /* config options here */
+  output: "export",
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   images: {
+    unoptimized: true,
     qualities: [75, 100],
     remotePatterns: [{ hostname: "avatar.iran.liara.run" }],
   },
