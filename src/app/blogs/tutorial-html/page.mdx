@@ -1,0 +1,71 @@
+import Link from "next/link";
+
+<article className="mx-auto min-h-dvh w-full max-w-3xl px-4 pb-24 pt-28 lg:px-8 lg:pt-36">
+  <Link href="/blogs" className="text-muted-foreground hover:text-primary text-sm transition-colors">
+    ← Kembali ke blog
+  </Link>
+
+  <header className="border-border/70 mt-8 border-b pb-8">
+    <p className="text-primary mb-3 text-sm font-semibold tracking-[0.2em] uppercase">
+      Tutorial · 8 November 2026
+    </p>
+    <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
+      Mengenal HTML: struktur dasar halaman web
+    </h1>
+    <p className="text-muted-foreground mt-5 text-lg leading-8">
+      Kenali kerangka dokumen HTML dan buat halaman Hello World pertamamu.
+    </p>
+  </header>
+
+  <div className="prose dark:prose-invert prose-headings:font-heading prose-pre:border prose-pre:border-border prose-pre:bg-muted/60 prose-code:before:content-none prose-code:after:content-none mt-10 max-w-none">
+
+# Apa itu HTML?
+
+HTML (HyperText Markup Language) adalah bahasa markup untuk menyusun konten
+halaman web. HTML memberi struktur pada teks, gambar, tautan, dan elemen lain;
+tampilan biasanya diatur dengan CSS, sedangkan interaksi dapat dibuat dengan
+JavaScript.
+
+## Kerangka dokumen HTML
+
+Berikut kerangka sederhana yang menjadi titik awal sebuah halaman:
+
+```html
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hello World</title>
+  </head>
+  <body>
+    <h1>Hello World</h1>
+    <p>Ini halaman HTML pertama saya.</p>
+  </body>
+</html>
+```
+
+Beberapa bagian pentingnya:
+
+- `<!doctype html>` memberi tahu browser bahwa dokumen ini menggunakan HTML modern.
+- Elemen `<html>` membungkus seluruh halaman. Atribut `lang="id"` menyatakan bahasa konten.
+- Elemen `<head>` berisi informasi halaman, seperti karakter, tampilan mobile, dan judul tab.
+- Elemen `<body>` berisi konten yang terlihat oleh pengunjung.
+
+## Membuat halaman Hello World
+
+Simpan kode tadi sebagai `index.html`, lalu buka file tersebut di browser. Browser
+akan menampilkan judul **Hello World** sebagai heading dan kalimat di bawahnya
+sebagai paragraf.
+
+Tag HTML biasanya memiliki tag pembuka dan penutup, seperti `<p>` dan `</p>`.
+Ada juga elemen kosong seperti `<meta>` yang tidak membungkus teks lain.
+
+## Langkah berikutnya
+
+Coba ubah judul dan paragrafnya, lalu tambahkan tautan dengan elemen `<a>` atau
+gambar dengan elemen `<img>`. Setelah nyaman dengan struktur HTML, kamu bisa mulai
+menambahkan CSS agar halaman tampil lebih menarik.
+
+  </div>
+</article>

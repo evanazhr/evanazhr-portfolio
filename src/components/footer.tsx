@@ -4,12 +4,13 @@ import Contact from "@/components/contact";
 export default function Footer() {
   return (
     <FadeInSection>
-      <section className="w-full border-t border-border/40 bg-card/30 backdrop-blur-sm mt-12">
-        <div className="w-full max-w-5xl pb-24 pt-8 md:pb-8 md:pt-8 px-4 md:px-8 mx-auto">
-          <div className="flex flex-col w-full justify-center gap-4 items-center">
+      <section className="border-border/40 bg-card/30 mt-12 w-full border-t backdrop-blur-sm">
+        <div className="mx-auto w-full max-w-5xl px-4 pt-8 pb-24 md:px-8 md:pt-8 md:pb-8">
+          <div className="flex w-full flex-col items-center justify-center gap-4">
             <Contact withName={true} />
-            <div className="text-center text-xs text-muted-foreground pt-4 border-t border-border/20 w-full">
-              &copy; {new Date().getFullYear()} Evan Azhar Hartana. Made with React & Next.js.
+            <div className="text-muted-foreground border-border/20 w-full border-t pt-4 text-center text-xs">
+              &copy; {new Date().getFullYear()} Evan Azhar Hartana. Made with
+              React & Next.js.
             </div>
           </div>
         </div>

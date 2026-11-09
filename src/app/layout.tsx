@@ -97,15 +97,16 @@ export default function RootLayout({
 
   return (
     <html
+      suppressHydrationWarning
       lang="id"
       className={cn(
         "scroll-smooth",
         geistSans.variable,
         geistMono.variable,
-        montserratHeading.variable
+        montserratHeading.variable,
       )}
     >
-      <body className="antialiased bg-background text-foreground relative min-h-screen">
+      <body className="bg-background text-foreground relative min-h-screen antialiased">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -126,4 +127,3 @@ export default function RootLayout({
     </html>
   );
 }
-

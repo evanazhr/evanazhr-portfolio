@@ -11,11 +11,11 @@ type iconType = {
 function TechIcon({ children, name }: iconType) {
   return (
     <div
-      className="flex flex-col items-center justify-center p-3 md:p-5 rounded-lg border border-border/40 bg-card/30 backdrop-blur-sm aspect-square hover:border-primary hover:shadow-md hover:shadow-primary/5 transition-all duration-300 hover:scale-105 group cursor-pointer"
+      className="border-border/40 bg-card/30 hover:border-primary hover:shadow-primary/5 group flex aspect-square cursor-pointer flex-col items-center justify-center rounded-lg border p-3 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:shadow-md md:p-5"
       title={name}
     >
       {children}
-      <p className="mt-2.5 text-center text-[10px] md:text-xs font-medium text-muted-foreground group-hover:text-primary transition-colors duration-200">
+      <p className="text-muted-foreground group-hover:text-primary mt-2.5 text-center text-[10px] font-medium transition-colors duration-200 md:text-xs">
         {name}
       </p>
     </div>
@@ -30,17 +30,17 @@ export default function TechIcons() {
   }));
 
   return (
-    <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4 mt-4 md:mt-8">
+    <div className="mt-4 grid grid-cols-4 gap-4 md:mt-8 md:grid-cols-6 lg:grid-cols-8">
       {techIconItem.map((item, index) => (
         <ScaleUp key={index} delay={index}>
           <TechIcon name={item.name}>
-            <div className="relative size-10 md:size-12 flex items-center justify-center">
+            <div className="relative flex size-10 items-center justify-center md:size-12">
               <Image
                 src={item.icon}
                 width={48}
                 height={48}
                 alt={`${item.name} logo icon`}
-                className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"
+                className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-110"
               />
             </div>
           </TechIcon>

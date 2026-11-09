@@ -25,7 +25,7 @@ export default function Contact({ withName }: { withName: boolean }) {
   ];
 
   return (
-    <div className="flex flex-row gap-4 items-center justify-center">
+    <div className="flex flex-row items-center justify-center gap-4">
       {contactItem.map((item, index) =>
         isWithName ? (
           <ScaleUp key={index} delay={index}>
@@ -34,9 +34,9 @@ export default function Contact({ withName }: { withName: boolean }) {
               rel="noopener noreferrer"
               href={item.link}
               id={`contact-social-with-name-${item.name.toLowerCase()}`}
-              className="flex hover:text-primary active:text-primary gap-2 text-sm font-medium items-center justify-center transition-all duration-200 hover:scale-105"
+              className="hover:text-primary active:text-primary flex items-center justify-center gap-2 text-sm font-medium transition-all duration-200 hover:scale-105"
             >
-              <span className="bg-muted p-2 rounded-full border border-border/40 hover:bg-primary/10 transition-colors">
+              <span className="bg-muted border-border/40 hover:bg-primary/10 rounded-full border p-2 transition-colors">
                 {item.icon}
               </span>
               <p>{item.name}</p>
@@ -49,12 +49,12 @@ export default function Contact({ withName }: { withName: boolean }) {
             rel="noopener noreferrer"
             href={item.link}
             id={`contact-social-${item.name.toLowerCase()}`}
-            className="flex text-muted-foreground hover:text-primary active:text-primary p-2.5 rounded-full border border-border/40 bg-card/50 hover:bg-primary/10 transition-all duration-200 hover:scale-110 shadow-sm"
+            className="text-muted-foreground hover:text-primary active:text-primary border-border/40 bg-card/50 hover:bg-primary/10 flex rounded-full border p-2.5 shadow-sm transition-all duration-200 hover:scale-110"
             aria-label={item.name}
           >
             {item.icon}
           </a>
-        )
+        ),
       )}
     </div>
   );
