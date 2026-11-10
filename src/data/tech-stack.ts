@@ -8,6 +8,8 @@ export const techRegistry: Record<string, string> = {
   VueJs: "/assets/icons/vue.svg",
   React: "/assets/icons/react.svg",
   NextJs: "/assets/icons/next-js.svg",
+  "Express.js": "/assets/icons/express.svg",
+  "React Native": "/assets/icons/react.svg",
   // Tambahkan teknologi baru di sini di masa mendatang:
   // NodeJs: "/assets/icons/node-js.svg",
   // Python: "/assets/icons/python.svg",
@@ -23,4 +25,6 @@ export const featuredTechStack: string[] = [
   "VueJs",
   "React",
   "NextJs",
+  "Express.js",
+  "React Native",
 ];

@@ -1,6 +1,7 @@
 "use client";
 import ScaleUp from "@/components/animation/ScaleUp";
 import Image from "next/image";
+import { SiExpress } from "react-icons/si";
 import { techRegistry, featuredTechStack } from "@/data/tech-stack";
 
 type iconType = {
@@ -35,13 +36,17 @@ export default function TechIcons() {
         <ScaleUp key={index} delay={index}>
           <TechIcon name={item.name}>
             <div className="relative flex size-10 items-center justify-center md:size-12">
-              <Image
-                src={item.icon}
-                width={48}
-                height={48}
-                alt={`${item.name} logo icon`}
-                className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-110"
-              />
+              {item.name === "Express.js" ? (
+                <SiExpress aria-label="Express.js logo" className="size-10" />
+              ) : (
+                <Image
+                  src={item.icon}
+                  width={48}
+                  height={48}
+                  alt={`${item.name} logo icon`}
+                  className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-110"
+                />
+              )}
             </div>
           </TechIcon>
         </ScaleUp>

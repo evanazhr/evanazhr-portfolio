@@ -1,7 +1,12 @@
 "use client";
 import ScaleUp from "@/components/animation/ScaleUp";
 import { useState } from "react";
-import { IoLogoInstagram, IoLogoLinkedin, IoLogoGithub } from "react-icons/io5";
+import {
+  IoLogoInstagram,
+  IoLogoLinkedin,
+  IoLogoGithub,
+  IoMailOutline,
+} from "react-icons/io5";
 
 export default function Contact({ withName }: { withName: boolean }) {
   const [isWithName] = useState(withName);
@@ -15,7 +20,12 @@ export default function Contact({ withName }: { withName: boolean }) {
     {
       icon: <IoLogoLinkedin className="text-xl" />,
       name: "Linkedin",
-      link: "https://linkedin.com/in/evan-azhar-hartana-151434365",
+      link: "https://www.linkedin.com/in/evan-azhar-hartana/",
+    },
+    {
+      icon: <IoMailOutline className="text-xl" />,
+      name: "Email",
+      link: "mailto:evanazhr@gmail.com",
     },
     {
       icon: <IoLogoInstagram className="text-xl" />,

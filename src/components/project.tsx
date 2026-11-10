@@ -10,11 +10,14 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { FaExternalLinkAlt, FaCode } from "react-icons/fa";
+import { ImageIcon } from "lucide-react";
+import { SiExpress } from "react-icons/si";
 import { projectItems } from "@/data/projects";
 import { techRegistry } from "@/data/tech-stack";
 
 export default function Project() {
   const techIcons = (tech: string) => {
+    if (tech === "Express.js") return <SiExpress aria-label="Express.js logo" className="size-6" />;
     // Ambil path icon secara dinamis dari techRegistry terpusat
     const src = techRegistry[tech];
     return src ? (
@@ -39,15 +42,22 @@ export default function Project() {
           >
               <Card className="bg-card/40 border-border/30 flex flex-grow flex-col justify-between overflow-hidden rounded-lg pt-0 shadow-md backdrop-blur-sm transition-all duration-300 ease-in-out hover:shadow-xl dark:shadow-foreground/10 dark:hover:shadow-foreground/20">
               <CardHeader className="px-0 pt-0">
-                <div className="relative aspect-video w-full overflow-hidden">
-                  <Image
-                    width={600}
-                    height={338}
-                    src={item.thumbnail}
-                    className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-                    alt={`${item.title} preview thumbnail`}
-                  />
-                </div>
+                {item.thumbnail ? (
+                  <div className="relative aspect-video w-full overflow-hidden">
+                    <Image
+                      width={600}
+                      height={338}
+                      src={item.thumbnail}
+                      className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                      alt={`${item.title} preview thumbnail`}
+                    />
+                  </div>
+                ) : (
+                  <div className="border-border/30 bg-muted/30 text-muted-foreground flex aspect-video flex-col items-center justify-center gap-2 border-b font-mono text-xs">
+                    <ImageIcon aria-hidden="true" className="size-8 opacity-50" />
+                    <span>Preview belum tersedia</span>
+                  </div>
+                )}
                 <CardTitle className="font-heading mt-5 px-6 text-xl font-bold">
                   {item.title}
                 </CardTitle>
@@ -63,7 +73,11 @@ export default function Project() {
                       title={tech}
                       className="bg-muted/80 hover:bg-muted rounded-md p-1.5 transition duration-200"
                     >
-                      {techIcons(tech)}
+                      {techIcons(tech) ?? (
+                        <span className="text-muted-foreground px-1 text-xs">
+                          {tech}
+                        </span>
+                      )}
                     </div>
                   ))}
                 </div>

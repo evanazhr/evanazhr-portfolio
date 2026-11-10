@@ -1,13 +1,29 @@
 export interface ProjectItem {
   title: string;
   description: string;
-  thumbnail: string;
+  thumbnail?: string;
   link: string;
   repo: string;
   tech: string[]; // Mengacu pada kunci (key) di techRegistry (misal: "NextJs", "React")
 }
 
 export const projectItems: ProjectItem[] = [
+  {
+    title: "NutriCitra",
+    description:
+      "Platform untuk mengenali makanan melalui foto, memperkirakan nutrisi dan kalori dengan model AI, memantau asupan, serta memberi rekomendasi buah.",
+    link: "https://nutri-citra-project-6eik.vercel.app",
+    repo: "",
+    tech: ["React", "Express.js", "TailwindCSS", "Supabase"],
+  },
+  {
+    title: "PipeFoundation Mobile App",
+    description:
+      "Aplikasi mobile internal PT Krakatau Pipe Industries untuk berbagi pengetahuan secara online, sebagai versi mobile dari platform yang dikelola tim IT KPI.",
+    link: "",
+    repo: "https://github.com/evanazhr/kpi_pipefondation",
+    tech: ["React Native", "Javascript", "WebView"],
+  },
   {
     title: "Aplikasi Kasir NextJs",
     description:
@@ -27,9 +43,9 @@ export const projectItems: ProjectItem[] = [
     tech: ["NextJs", "React", "Typescript", "TailwindCSS"],
   },
   {
-    title: "Suxz Landing Page",
+    title: "Slicing UI suxz-codedesign.dev",
     description:
-      "Eksperimen pembelajaran slicing antarmuka platform e-learning 'Suxz' menggunakan framework Vue.js dengan gaya visual minimalis dan responsif.",
+      "Latihan slicing UI secara manual untuk platform e-learning Suxz menggunakan Vue.js dan Tailwind CSS.",
     thumbnail: "/assets/thumbnails/suxz.png",
     link: "https://suxz-codedesign-dev.vercel.app/",
     repo: "https://github.com/evanazhr/suxz-codedesign.dev.git",

@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     template: "%s | Evan Azhar Hartana",
   },
   description:
-    "Portofolio Evan Azhar Hartana. Seorang pengembang web yang sedang belajar membangun website dengan HTML, CSS, JavaScript, Vue, React, dan Next.js.",
+    "Portofolio Evan Azhar Hartana, mahasiswa Sistem Komputer Universitas Pamulang yang tertarik pada pengembangan web full stack.",
   keywords: [
     "Evan Azhar Hartana",
     "web developer",
@@ -39,6 +39,8 @@ export const metadata: Metadata = {
     "portfolio",
     "React",
     "Next.js",
+    "Express.js",
+    "Universitas Pamulang",
     "Vue",
     "Indonesia developer",
   ],
@@ -47,14 +49,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Evan Azhar Hartana – Developer Portfolio",
     description:
-      "Saya sedang membangun fondasi kuat dalam pengembangan web. Lihat proyek-proyek dan teknologi yang saya pelajari.",
+      "Mahasiswa Sistem Komputer yang membangun proyek web full stack dan terbuka untuk kesempatan magang.",
     url: "https://evanazhr.vercel.app",
     siteName: "Evan Azhar Hartana",
     images: [
       {
-        url: "/assets/image/avatar.jpeg",
-        width: 800,
-        height: 600,
+        url: "/assets/image/avatar.png",
+        width: 1254,
+        height: 1254,
         alt: "Evan Azhar Hartana",
       },
     ],
@@ -65,8 +67,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Evan Azhar Hartana – Developer Portfolio",
     description:
-      "Saya sedang membangun fondasi kuat dalam pengembangan web. Lihat proyek-proyek dan teknologi yang saya pelajari.",
-    images: ["/assets/image/avatar.jpeg"],
+      "Mahasiswa Sistem Komputer yang membangun proyek web full stack dan terbuka untuk kesempatan magang.",
+    images: ["/assets/image/avatar.png"],
     creator: "@evanazhr",
   },
   icons: {
@@ -86,11 +88,11 @@ export default function RootLayout({
     "@type": "Person",
     name: "Evan Azhar Hartana",
     url: "https://evanazhr.vercel.app",
-    image: "https://evanazhr.vercel.app/assets/image/avatar.jpeg",
-    jobTitle: "Fullstack Web Developer",
+    image: "https://evanazhr.vercel.app/assets/image/avatar.png",
+    jobTitle: "Aspiring Fullstack Web Developer",
     sameAs: [
       "https://github.com/evanazhr",
-      "https://linkedin.com/in/evan-azhar-hartana-151434365",
+      "https://www.linkedin.com/in/evan-azhar-hartana/",
       "https://www.instagram.com/evanazh/",
     ],
   };

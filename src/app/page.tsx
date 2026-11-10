@@ -5,6 +5,7 @@ import SquareBackground from "@/components/square-background";
 import TechIcons from "@/components/tech-icons";
 import Contact from "@/components/contact";
 import Project from "@/components/project";
+import { certifications, journeyItems, skillGroups } from "@/data/profile";
 
 import { Code, CodeXml } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -53,8 +54,11 @@ export default function Home() {
                     Evan Azhar Hartana
                   </h1>
                   <p className="text-primary/95 max-w-md text-base font-semibold md:text-xl">
-                    Undergraduate Computer System Student | Fullstack Web
-                    Developer
+                    Mahasiswa Sistem Komputer · Aspiring Fullstack Web Developer
+                  </p>
+                  <p className="text-muted-foreground max-w-md text-sm">
+                    Pandeglang, Banten, Indonesia · Terbuka untuk magang dan
+                    kesempatan junior developer
                   </p>
                   <div className="mt-4 text-3xl">
                     <Contact withName={false} />
@@ -75,19 +79,14 @@ export default function Home() {
                 <span className="text-primary font-mono">$</span> cat about.txt
               </h2>
               <p className="text-muted-foreground mt-4 text-justify text-base leading-[1.6]">
-                Saya Evan, saya sedang belajar membangun fundamental dalam
-                pengembangan web. Perjalanan saya dimulai dengan belajar HTML,
-                CSS, dan JavaScript, dan sekarang saya sedang meningkatkan
-                kemampuan saya dengan belajar framework Vue, React, dan Next.js.
-                Saya bertujuan untuk menjadi seorang Fullstack Web Developer dan
-                seorang Mobile App Developer.
+                Saya Evan, mahasiswa Sistem Komputer di Universitas Pamulang.
+                Latar sistem komputer membuat saya tertarik pada hubungan antara
+                hardware dan software, termasuk dampaknya pada performa aplikasi.
               </p>
               <p className="text-muted-foreground mt-4 text-justify text-base leading-[1.6]">
-                Website ini adalah catatan visual dari proses belajar saya.
-                Proyek-proyek di sini mencerminkan eksperimen dan aplikasi
-                praktis dari konsep-konsep yang saya pelajari. Saya berkomitmen
-                untuk terus belajar, meningkatkan keterampilan saya dan mencari
-                tantangan baru.
+                Saya senang membangun antarmuka modern, fitur server-side, dan
+                aplikasi yang terhubung dengan database. Saya terus mengembangkan
+                kemampuan full stack melalui proyek pribadi dan kolaborasi.
               </p>
             </div>
           </div>
@@ -110,8 +109,80 @@ export default function Home() {
               </CardHeader>
               <CardContent className="pb-8 md:px-8">
                 <TechIcons />
+                <div className="mt-8 grid gap-4 md:grid-cols-3">
+                  {skillGroups.map((group) => (
+                    <div
+                      key={group.title}
+                      className="border-border/40 bg-background/40 rounded-lg border p-5"
+                    >
+                      <div className="flex items-center justify-between gap-2">
+                        <h3 className="font-semibold">{group.title}</h3>
+                        <span className="text-muted-foreground font-mono text-xs">
+                          [{group.level}]
+                        </span>
+                      </div>
+                      <p className="text-muted-foreground mt-3 text-sm leading-6">
+                        {group.skills.join(" · ")}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-8">
+                  <h3 className="font-mono text-sm font-semibold">
+                    <span className="text-primary">$</span> ls ./certifications
+                  </h3>
+                  <ul className="mt-3 flex flex-wrap gap-2">
+                    {certifications.map((certification) => (
+                      <li
+                        key={certification}
+                        className="border-border/40 bg-background/40 text-muted-foreground rounded-md border px-3 py-2 text-xs"
+                      >
+                        {certification}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </CardContent>
             </Card>
+          </div>
+        </section>
+      </FadeInSection>
+
+      {/* Journey */}
+      <FadeInSection>
+        <section id="journey" className="w-full">
+          <div className="container mx-auto max-w-5xl px-4 md:px-8">
+            <div className="border-border/40 bg-card/30 rounded-lg border p-6 shadow-sm backdrop-blur-sm dark:shadow-foreground/10 md:p-10">
+              <h2 className="text-3xl font-bold">
+                <span className="text-primary font-mono">$</span> tail -n 3
+                ./journey.log
+              </h2>
+              <ol className="border-border/40 mt-8 space-y-6 border-l pl-5">
+                {journeyItems.map((item) => (
+                  <li key={item.title} className="relative">
+                    <span
+                      aria-hidden="true"
+                      className="bg-primary absolute top-1.5 -left-[1.63rem] size-2.5 rounded-full"
+                    />
+                    <p className="text-muted-foreground font-mono text-xs uppercase">
+                      {item.date}
+                    </p>
+                    <h3 className="mt-1 font-semibold">
+                      {item.title}
+                      {item.organization && (
+                        <span className="text-muted-foreground font-normal">
+                          {" "}
+                          @ {item.organization}
+                        </span>
+                      )}
+                    </h3>
+                    <p className="text-muted-foreground mt-2 text-sm leading-6">
+                      {item.description}
+                    </p>
+                  </li>
+                ))}
+              </ol>
+            </div>
           </div>
         </section>
       </FadeInSection>
