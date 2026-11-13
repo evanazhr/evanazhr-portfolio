@@ -1,33 +1,36 @@
 # Portfolio Evan Azhar Hartana
 
-Situs portofolio pribadi **Evan Azhar Hartana** — mahasiswa Sistem Komputer Universitas Pamulang yang berfokus pada pengembangan web full stack. Portofolio ini menampilkan profil, tech stack, perjalanan belajar, proyek, serta tulisan blog.
+Portofolio pribadi **Evan Azhar Hartana** — mahasiswa Sistem Komputer Universitas Pamulang yang berfokus pada pengembangan web full stack. Situs menampilkan profil, tech stack, perjalanan belajar, proyek, dan tulisan blog dalam antarmuka terminal yang responsif.
 
-🔗 **Live:** [evanazhr.vercel.app](https://evanazhr.vercel.app)
+🔗 **Live:** [evanazhr.vercel.app](https://evanazhr.vercel.app)  
+📄 **Product requirements:** [PRD.md](./PRD.md)
 
-## Fitur
+## Halaman
 
-- **Desain bertema terminal/CLI** dengan panel, prompt `evan@portfolio:~$`, dan status bar di setiap halaman.
-- **Satu section = satu halaman** — Home, About, Tech & Journey, dan Projects masing-masing punya route sendiri dan tampil memenuhi satu layar seperti panel terminal.
-- **Default dark mode** dengan opsi light mode menggunakan `next-themes`.
-- **Responsif dan aksesibel** — navigasi desktop di atas, navigasi mobile berlabel di bawah, skip link, focus-visible, dan dukungan `prefers-reduced-motion`.
-- **Data-driven** — profil, proyek, dan daftar teknologi dikelola di folder `src/data`.
-- **Blog berbasis MDX** dengan halaman daftar tulisan dan halaman artikel.
-- **Animasi** masuk, hover, dan spotlight card menggunakan Motion/Framer Motion.
-- **SEO** — metadata Open Graph/Twitter, JSON-LD, sitemap, dan `robots.txt`.
-- **Static export** — hasil build berupa HTML statis di folder `out/`.
+| Route | Isi |
+| --- | --- |
+| `/` | Perkenalan, ringkasan profil, dan perintah cepat |
+| `/about` | Cerita singkat dan fakta profil |
+| `/tech` | Tech stack, kelompok skill, perjalanan belajar, sertifikasi |
+| `/projects` | Daftar proyek beserta demo dan tautan sumber |
+| `/blogs` | Daftar tulisan |
+| `/blogs/tutorial-html` | Artikel contoh berbasis MDX |
+| `/404` | Halaman fallback bertema terminal |
 
-## Tech Stack
+Setiap halaman memenuhi satu layar dan memakai panel terminal dengan area konten yang bisa di-scroll. Default tema gelap; tombol tema tersedia di navigasi.
+
+## Teknologi
 
 | Kategori | Teknologi |
 | --- | --- |
-| Framework | [Next.js 16](https://nextjs.org) (App Router, Turbopack) |
-| UI | React 19, Tailwind CSS v4, shadcn/ui, Base UI, Radix Slot |
+| Framework | Next.js 16 (App Router, Turbopack), React 19 |
 | Bahasa | TypeScript |
-| Animasi | Motion / Framer Motion |
+| UI | Tailwind CSS v4, shadcn/ui |
+| Animasi | Motion |
 | Tema | next-themes |
 | Konten | MDX (`@next/mdx`) |
-| Ikon | Lucide, Remixicon, React Icons |
-| Utilitas | class-variance-authority, clsx, tailwind-merge, tailwind-variants |
+| Ikon | Lucide, React Icons |
+| Utilitas | clsx, tailwind-merge, class-variance-authority |
 | Kualitas kode | ESLint, Prettier + `prettier-plugin-tailwindcss` |
 
 ## Menjalankan Secara Lokal
@@ -35,18 +38,13 @@ Situs portofolio pribadi **Evan Azhar Hartana** — mahasiswa Sistem Komputer Un
 **Prasyarat:** Node.js 20.9+ dan npm.
 
 ```bash
-# clone repositori
 git clone git@github.com:evanazhr/evanazhr-portfolio.git
 cd evanazhr-portfolio
-
-# install dependency
 npm install
-
-# jalankan development server
 npm run dev
 ```
 
-Buka [http://localhost:3000](http://localhost:3000) di browser.
+Buka [http://localhost:3000](http://localhost:3000).
 
 ## Scripts
 
@@ -57,80 +55,85 @@ Buka [http://localhost:3000](http://localhost:3000) di browser.
 | `npm run lint` | Memformat `src/` dengan Prettier lalu menjalankan ESLint. |
 | `npm run lint:fix` | Sama seperti `npm run lint` (format + lint). |
 
-> Karena proyek menggunakan `output: "export"`, hasil build tidak dijalankan dengan `next start`. Untuk melihat hasil statisnya secara lokal, gunakan static file server, misalnya:
->
-> ```bash
-> npx serve out
-> ```
+Karena proyek memakai `output: "export"`, hasil build tidak dijalankan dengan `next start`. Untuk melihat hasil statisnya:
+
+```bash
+npm run build
+npx serve out
+# atau
+python3 -m http.server 4173 -d out
+```
 
 ## Struktur Proyek
 
 ```text
 .
 ├── public/
-│   ├── assets/               # gambar, ikon, dan thumbnail proyek
+│   ├── assets/                 # ikon, gambar, dan thumbnail proyek
 │   ├── favicon.ico
 │   └── robots.txt
 ├── src/
 │   ├── app/
-│   │   ├── about/            # halaman About
-│   │   ├── tech/             # halaman Tech Stack, Journey, & sertifikasi
-│   │   ├── projects/         # halaman Projects
-│   │   ├── blogs/            # halaman daftar blog + artikel MDX
-│   │   ├── layout.tsx        # layout root, metadata SEO, theme provider
-│   │   ├── page.tsx          # halaman Home
-│   │   ├── not-found.tsx     # halaman 404 bertema terminal
-│   │   └── sitemap.ts        # sitemap statis
-│   ├── assets/style/         # global CSS & tema Tailwind
+│   │   ├── about/page.tsx
+│   │   ├── blogs/
+│   │   │   ├── page.tsx
+│   │   │   └── tutorial-html/page.mdx
+│   │   ├── projects/page.tsx
+│   │   ├── tech/page.tsx
+│   │   ├── layout.tsx          # layout root, font, metadata, theme provider
+│   │   ├── page.tsx            # Home
+│   │   ├── not-found.tsx       # halaman 404
+│   │   └── sitemap.ts
+│   ├── assets/style/globals.css
 │   ├── components/
-│   │   ├── animation/        # komponen animasi
-│   │   ├── ui/               # komponen shadcn/ui
-│   │   ├── terminal-shell.tsx   # panel terminal full-screen
-│   │   ├── terminal-heading.tsx # judul bergaya perintah terminal
-│   │   ├── project.tsx       # kartu proyek
-│   │   ├── tech-icons.tsx    # ikon tech stack
+│   │   ├── animation/          # fade-in halaman
+│   │   ├── ui/                 # primitif shadcn/ui
+│   │   ├── terminal-shell.tsx
+│   │   ├── terminal-heading.tsx
+│   │   ├── project.tsx
+│   │   ├── tech-icons.tsx
 │   │   ├── navbar.tsx
 │   │   ├── footer.tsx
 │   │   └── contact.tsx
 │   ├── data/
-│   │   ├── profile.ts        # skill, sertifikasi, perjalanan
-│   │   ├── projects.ts       # daftar proyek
-│   │   └── tech-stack.ts     # registry ikon & featured tech
-│   ├── lib/                  # theme provider & utilitas
-│   ├── utils/                # helper (mis. pembacaan folder)
-│   └── mdx-components.tsx    # komponen MDX
-├── next.config.ts            # konfigurasi Next.js + MDX + static export
+│   │   ├── profile.ts          # skill, perjalanan, sertifikasi
+│   │   ├── projects.ts         # daftar proyek
+│   │   └── tech-stack.ts       # registry ikon & tech unggulan
+│   ├── lib/                    # theme provider & utilitas
+│   └── mdx-components.tsx
+├── next.config.ts              # Next.js + MDX + static export
 ├── vercel.json
-└── wrangler.jsonc            # konfigurasi deploy Cloudflare
+└── wrangler.jsonc              # konfigurasi Cloudflare
 ```
 
 ## Mengubah Konten
 
-- **Profil, skill, sertifikasi, dan journey** → `src/data/profile.ts`
+- **Profil, skill, perjalanan, sertifikasi** → `src/data/profile.ts`
 - **Daftar proyek** → `src/data/projects.ts`
-- **Ikon & featured tech stack** → `src/data/tech-stack.ts`
+- **Ikon dan tech unggulan** → `src/data/tech-stack.ts`
 - **Tulisan blog**
-  1. Buat folder baru di `src/app/blogs/<slug>/` dengan file `page.mdx`.
-  2. Tambahkan entri tulisan pada array `posts` di `src/app/blogs/page.tsx`.
-  3. Taruh gambar pendukung di `public/assets/` bila diperlukan.
+  1. Buat folder `src/app/blogs/<slug>/` dengan file `page.mdx`.
+  2. Tambahkan entri pada array `posts` di `src/app/blogs/page.tsx`.
+  3. Simpan gambar pendukung di `public/assets/`.
 - **Metadata SEO, Open Graph, dan JSON-LD** → `src/app/layout.tsx`
+- **Warna, tipografi, dan utilitas visual** → `src/assets/style/globals.css`
 
 ## Deployment
 
-Proyek ini menghasilkan situs statis melalui `npm run build` (folder `out/`).
+Build menghasilkan situs statis di `out/`.
 
 ### Cloudflare
-
-Konfigurasi tersedia di `wrangler.jsonc` dengan aset dari `./out`:
 
 ```bash
 npm run build
 npx wrangler deploy
 ```
 
+Konfigurasi aset ada di `wrangler.jsonc` (`./out`).
+
 ### Vercel
 
-Hubungkan repositori ke Vercel, lalu gunakan konfigurasi build yang ada (`npm run build`). Konfigurasi tambahan berada di `vercel.json`.
+Hubungkan repositori ke Vercel dan gunakan `npm run build` sebagai build command. Konfigurasi tambahan ada di `vercel.json`.
 
 ## Kontak
 
