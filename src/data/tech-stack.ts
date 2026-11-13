@@ -1,4 +1,4 @@
-// Registry of all tech icons and paths
+// Path ikon berwarna. Ikon monokrom dirender inline di tech-icons.tsx.
 export const techRegistry: Record<string, string> = {
   HTML: "/assets/icons/html-5.svg",
   CSS: "/assets/icons/css-3.svg",
@@ -7,8 +7,6 @@ export const techRegistry: Record<string, string> = {
   Typescript: "/assets/icons/typescript.svg",
   VueJs: "/assets/icons/vue.svg",
   React: "/assets/icons/react.svg",
-  NextJs: "/assets/icons/next-js.svg",
-  "Express.js": "/assets/icons/express.svg",
   "React Native": "/assets/icons/react.svg",
   // Tambahkan teknologi baru di sini di masa mendatang:
   // NodeJs: "/assets/icons/node-js.svg",
