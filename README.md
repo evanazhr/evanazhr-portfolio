@@ -6,10 +6,10 @@ Situs portofolio pribadi **Evan Azhar Hartana** — mahasiswa Sistem Komputer Un
 
 ## Fitur
 
-- **Desain bertema terminal/CLI** dengan prompt `evan@portfolio:~$` di setiap bagian.
+- **Desain bertema terminal/CLI** dengan panel, prompt `evan@portfolio:~$`, dan status bar di setiap halaman.
 - **Satu section = satu halaman** — Home, About, Tech & Journey, dan Projects masing-masing punya route sendiri dan tampil memenuhi satu layar seperti panel terminal.
 - **Default dark mode** dengan opsi light mode menggunakan `next-themes`.
-- **Responsif** — navigasi desktop di atas, navigasi mobile di bawah.
+- **Responsif dan aksesibel** — navigasi desktop di atas, navigasi mobile berlabel di bawah, skip link, focus-visible, dan dukungan `prefers-reduced-motion`.
 - **Data-driven** — profil, proyek, dan daftar teknologi dikelola di folder `src/data`.
 - **Blog berbasis MDX** dengan halaman daftar tulisan dan halaman artikel.
 - **Animasi** masuk, hover, dan spotlight card menggunakan Motion/Framer Motion.
@@ -68,7 +68,9 @@ Buka [http://localhost:3000](http://localhost:3000) di browser.
 ```text
 .
 ├── public/
-│   └── assets/               # gambar, ikon, dan thumbnail proyek
+│   ├── assets/               # gambar, ikon, dan thumbnail proyek
+│   ├── favicon.ico
+│   └── robots.txt
 ├── src/
 │   ├── app/
 │   │   ├── about/            # halaman About
@@ -77,12 +79,14 @@ Buka [http://localhost:3000](http://localhost:3000) di browser.
 │   │   ├── blogs/            # halaman daftar blog + artikel MDX
 │   │   ├── layout.tsx        # layout root, metadata SEO, theme provider
 │   │   ├── page.tsx          # halaman Home
+│   │   ├── not-found.tsx     # halaman 404 bertema terminal
 │   │   └── sitemap.ts        # sitemap statis
 │   ├── assets/style/         # global CSS & tema Tailwind
 │   ├── components/
 │   │   ├── animation/        # komponen animasi
 │   │   ├── ui/               # komponen shadcn/ui
-│   │   ├── terminal-shell.tsx # panel terminal full-screen
+│   │   ├── terminal-shell.tsx   # panel terminal full-screen
+│   │   ├── terminal-heading.tsx # judul bergaya perintah terminal
 │   │   ├── project.tsx       # kartu proyek
 │   │   ├── tech-icons.tsx    # ikon tech stack
 │   │   ├── navbar.tsx

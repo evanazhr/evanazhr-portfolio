@@ -2,13 +2,20 @@ import { MetadataRoute } from "next";
 
 export const dynamic = "force-static";
 
-const routes = ["", "/about", "/tech", "/projects", "/blogs"];
+const routes = [
+  { path: "", priority: 1.0 },
+  { path: "/about", priority: 0.8 },
+  { path: "/tech", priority: 0.8 },
+  { path: "/projects", priority: 0.8 },
+  { path: "/blogs", priority: 0.8 },
+  { path: "/blogs/tutorial-html", priority: 0.6 },
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return routes.map((route, index) => ({
-    url: `https://evanazhr.vercel.app${route}`,
+  return routes.map((route) => ({
+    url: `https://evanazhr.vercel.app${route.path}`,
     lastModified: new Date(),
     changeFrequency: "monthly",
-    priority: index === 0 ? 1.0 : 0.8,
+    priority: route.priority,
   }));
 }

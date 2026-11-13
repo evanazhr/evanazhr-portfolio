@@ -1,24 +1,22 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import ThemeProvider from "@/lib/theme-provider";
 import "@/assets/style/globals.css";
-import { Geist, Geist_Mono, Montserrat } from "next/font/google";
+import { Archivo, IBM_Plex_Mono } from "next/font/google";
 import { cn } from "@/lib/utils";
 
-const montserratHeading = Montserrat({
+const archivo = Archivo({
   subsets: ["latin"],
-  variable: "--font-heading",
+  variable: "--font-archivo",
+  display: "swap",
 });
 
-const geistSans = Geist({
+const plexMono = IBM_Plex_Mono({
   subsets: ["latin"],
-  variable: "--font-sans",
-});
-
-const geistMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
+  weight: ["400", "500", "600"],
+  variable: "--font-plex-mono",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -74,8 +72,14 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#080b09",
 };
 
 export default function RootLayout({
@@ -101,14 +105,9 @@ export default function RootLayout({
     <html
       suppressHydrationWarning
       lang="id"
-      className={cn(
-        "scroll-smooth",
-        geistSans.variable,
-        geistMono.variable,
-        montserratHeading.variable,
-      )}
+      className={cn(archivo.variable, plexMono.variable)}
     >
-      <body className="bg-background text-foreground relative min-h-screen antialiased">
+      <body className="bg-background text-foreground relative min-h-svh antialiased">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -119,11 +118,17 @@ export default function RootLayout({
           enableSystem={false}
           disableTransitionOnChange
         >
-          <div className="grid-background" />
-          <div className="glow-nebula" />
-          <div className="glow-nebula-secondary" />
+          <a
+            href="#main"
+            className="bg-background text-foreground border-border sr-only z-50 rounded-sm border px-3 py-2 font-mono text-xs focus:not-sr-only focus:fixed focus:top-3 focus:left-3"
+          >
+            Lewati ke konten
+          </a>
+          <div className="site-grid" />
           <Navbar />
-          <main className="min-h-svh">{children}</main>
+          <main id="main" tabIndex={-1} className="min-h-svh">
+            {children}
+          </main>
           <Footer />
         </ThemeProvider>
       </body>

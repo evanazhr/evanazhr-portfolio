@@ -15,7 +15,7 @@ export const techRegistry: Record<string, string> = {
   // Python: "/assets/icons/python.svg",
 };
 
-// Featured tech stack yang ditampilkan di halaman utama
+// Featured tech stack yang ditampilkan di halaman tech
 export const featuredTechStack: string[] = [
   "HTML",
   "CSS",

@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import FadeInSection from "@/components/animation/FadeInSection";
 import TerminalShell from "@/components/terminal-shell";
+import TerminalHeading from "@/components/terminal-heading";
 import TechIcons from "@/components/tech-icons";
 import { certifications, journeyItems, skillGroups } from "@/data/profile";
-import { Code } from "lucide-react";
+import { Check } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Tech & Journey",
@@ -11,52 +12,62 @@ export const metadata: Metadata = {
     "Teknologi, tools, sertifikasi, dan perjalanan belajar Evan Azhar Hartana di bidang pengembangan web full stack.",
 };
 
+const sectionClass = "border-border mt-10 border-t pt-8";
+
 export default function TechPage() {
   return (
-    <TerminalShell path="tech">
+    <TerminalShell path="tech" label="Tech stack dan perjalanan">
       <FadeInSection>
-        <h2 className="flex items-center gap-2 text-2xl font-bold md:text-3xl">
-          <span className="text-primary font-mono">$</span> ls tech-stack/
-          <Code className="text-primary size-7" />
-        </h2>
-        <p className="text-muted-foreground mt-2 text-base">
-          Teknologi yang saya pelajari dan gunakan
-        </p>
-        <TechIcons />
-        <div className="mt-8 grid gap-4 md:grid-cols-3">
-          {skillGroups.map((group) => (
-            <div
-              key={group.title}
-              className="border-border/40 bg-background/40 rounded-lg border p-5"
-            >
-              <div className="flex items-center justify-between gap-2">
-                <h3 className="font-semibold">{group.title}</h3>
-                <span className="text-muted-foreground font-mono text-xs">
-                  [{group.level}]
-                </span>
-              </div>
-              <p className="text-muted-foreground mt-3 text-sm leading-6">
-                {group.skills.join(" · ")}
-              </p>
-            </div>
-          ))}
-        </div>
+        <TerminalHeading
+          command="ls tech-stack/"
+          description="Teknologi yang saya pelajari dan gunakan, beserta perjalanan dan bukti belajarnya."
+        />
 
-        <div className="border-border/40 mt-10 border-t pt-8">
-          <h3 className="text-xl font-bold md:text-2xl">
-            <span className="text-primary font-mono">$</span> cat journey.log
-          </h3>
-          <ol className="border-border/40 mt-6 space-y-6 border-l pl-5">
+        <TechIcons />
+
+        <section aria-label="Kelompok kemampuan" className={sectionClass}>
+          <TerminalHeading
+            as="h2"
+            size="section"
+            command="cat skills.txt"
+            className="mb-4"
+          />
+          <ul className="border-border border-t">
+            {skillGroups.map((group) => (
+              <li
+                key={group.title}
+                className="border-border grid gap-1 border-b py-4 sm:grid-cols-[10rem_1fr_auto] sm:items-baseline sm:gap-6"
+              >
+                <h3 className="text-sm font-semibold">{group.title}</h3>
+                <p className="text-muted-foreground text-sm leading-6">
+                  {group.skills.join(", ")}
+                </p>
+                <span className="text-muted-foreground font-mono text-[11px]">
+                  {group.level}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section aria-label="Perjalanan belajar" className={sectionClass}>
+          <TerminalHeading
+            as="h2"
+            size="section"
+            command="cat journey.log"
+            className="mb-4"
+          />
+          <ol className="border-border ml-1 border-l">
             {journeyItems.map((item) => (
-              <li key={item.title} className="relative">
+              <li key={item.title} className="relative pb-6 pl-6 last:pb-0">
                 <span
                   aria-hidden="true"
-                  className="bg-primary absolute top-1.5 -left-[1.63rem] size-2.5 rounded-full"
+                  className="bg-primary absolute top-1.5 -left-[4.5px] size-2 rounded-full"
                 />
-                <p className="text-muted-foreground font-mono text-xs uppercase">
+                <p className="text-muted-foreground font-mono text-[11px]">
                   {item.date}
                 </p>
-                <h4 className="mt-1 font-semibold">
+                <h3 className="mt-1 text-[15px] font-semibold">
                   {item.title}
                   {item.organization && (
                     <span className="text-muted-foreground font-normal">
@@ -64,30 +75,39 @@ export default function TechPage() {
                       @ {item.organization}
                     </span>
                   )}
-                </h4>
-                <p className="text-muted-foreground mt-2 text-sm leading-6">
+                </h3>
+                <p className="text-muted-foreground mt-1.5 max-w-[64ch] text-sm leading-6">
                   {item.description}
                 </p>
               </li>
             ))}
           </ol>
-        </div>
+        </section>
 
-        <div className="border-border/40 mt-10 border-t pt-8">
-          <h3 className="font-mono text-sm font-semibold">
-            <span className="text-primary">$</span> ls ./certifications
-          </h3>
-          <ul className="mt-3 flex flex-wrap gap-2">
+        <section aria-label="Sertifikasi" className={sectionClass}>
+          <TerminalHeading
+            as="h2"
+            size="section"
+            command="ls ./certifications"
+            className="mb-4"
+          />
+          <ul className="border-border border-t">
             {certifications.map((certification) => (
               <li
                 key={certification}
-                className="border-border/40 bg-background/40 text-muted-foreground rounded-md border px-3 py-2 text-xs"
+                className="border-border flex items-start gap-3 border-b py-2.5 last:border-b-0"
               >
-                {certification}
+                <Check
+                  className="text-success mt-0.5 size-3.5 shrink-0"
+                  aria-hidden="true"
+                />
+                <span className="text-muted-foreground text-sm">
+                  {certification}
+                </span>
               </li>
             ))}
           </ul>
-        </div>
+        </section>
       </FadeInSection>
     </TerminalShell>
   );
