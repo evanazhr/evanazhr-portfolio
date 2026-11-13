@@ -13,15 +13,15 @@ const posts = [
 
 export default function Blog() {
   return (
-    <div className="mx-auto max-w-5xl px-4 pb-24 pt-28 md:pt-36 lg:px-8">
+    <div className="mx-auto max-w-5xl px-4 pt-28 pb-24 md:pt-36 lg:px-8">
       <header className="mb-12 max-w-2xl">
         <p className="text-primary mb-3 text-sm font-semibold tracking-[0.2em] uppercase">
           Catatan dan tutorial
         </p>
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">Blog</h1>
         <p className="text-muted-foreground mt-5 text-lg leading-8">
-          Tempat saya berbagi hal yang sedang dipelajari seputar web development,
-          dari catatan kecil sampai tutorial praktis.
+          Tempat saya berbagi hal yang sedang dipelajari seputar web
+          development, dari catatan kecil sampai tutorial praktis.
         </p>
       </header>
 

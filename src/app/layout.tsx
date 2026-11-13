@@ -115,15 +115,16 @@ export default function RootLayout({
         />
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="dark"
+          enableSystem={false}
           disableTransitionOnChange
         >
+          <div className="grid-background" />
+          <div className="glow-nebula" />
+          <div className="glow-nebula-secondary" />
           <Navbar />
-          <main>{children}</main>
-          <footer>
-            <Footer />
-          </footer>
+          <main className="min-h-svh">{children}</main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

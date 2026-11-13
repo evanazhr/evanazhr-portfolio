@@ -230,3 +230,24 @@
     transform: translate(-20%, -15%) scale(0.85);
   }
 }
+
+/* Terminal-style scrollbar for full-screen CLI panels */
+.terminal-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in oklch, var(--color-primary) 55%, transparent)
+    transparent;
+  overscroll-behavior: contain;
+}
+
+.terminal-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.terminal-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.terminal-scroll::-webkit-scrollbar-thumb {
+  background: color-mix(in oklch, var(--color-primary) 55%, transparent);
+  border-radius: 9999px;
+}

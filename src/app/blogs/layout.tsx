@@ -3,7 +3,5 @@ type BlogLayoutProps = {
 };
 
 export default function BlogLayout({ children }: BlogLayoutProps) {
-  return (
-    <>{children}</>
-  );
+  return <>{children}</>;
 }
