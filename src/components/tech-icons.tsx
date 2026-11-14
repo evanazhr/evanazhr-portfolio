@@ -1,12 +1,11 @@
 import Image from "next/image";
-import { SiExpress, SiNextdotjs } from "react-icons/si";
+import { SiNextdotjs } from "react-icons/si";
 import type { IconType } from "react-icons";
 import { techRegistry, featuredTechStack } from "@/data/tech-stack";
 
 // Ikon monokrom yang perlu mengikuti warna teks agar terbaca di kedua tema.
 const inlineIcons: Record<string, IconType> = {
   NextJs: SiNextdotjs,
-  "Express.js": SiExpress,
 };
 
 export default function TechIcons() {
@@ -40,7 +39,9 @@ export default function TechIcons() {
                   height={40}
                   alt=""
                   sizes="40px"
-                  className="size-full object-contain transition-opacity duration-200 group-hover:opacity-100 md:opacity-90"
+                  className={`size-full object-contain transition-opacity duration-200 group-hover:opacity-100 md:opacity-90 ${
+                    item.name === "Express.js" ? "dark:invert" : ""
+                  }`}
                 />
               ) : (
                 <span className="text-muted-foreground font-mono text-[10px]">

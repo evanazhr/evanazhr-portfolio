@@ -7,6 +7,7 @@ export const techRegistry: Record<string, string> = {
   Typescript: "/assets/icons/typescript.svg",
   VueJs: "/assets/icons/vue.svg",
   React: "/assets/icons/react.svg",
+  "Express.js": "/assets/icons/express.svg",
   "React Native": "/assets/icons/react.svg",
   // Tambahkan teknologi baru di sini di masa mendatang:
   // NodeJs: "/assets/icons/node-js.svg",

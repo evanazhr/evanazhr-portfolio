@@ -9,6 +9,15 @@ export interface ProjectItem {
 
 export const projectItems: ProjectItem[] = [
   {
+    title: "Evanazhr Mini Projects",
+    description:
+      "Kumpulan tools dan utility interaktif untuk kebutuhan sehari-hari, mulai dari palindrome checker, kalkulator interpolasi, QR code generator, hingga timer Pomodoro.",
+    thumbnail: "/assets/thumbnails/mini-projects.png",
+    link: "https://evanazhr-mini-projects.vercel.app",
+    repo: "https://github.com/evanazhr/evanazhr-mini-projects",
+    tech: ["NextJs", "React", "Typescript", "TailwindCSS"],
+  },
+  {
     title: "NutriCitra",
     description:
       "Platform untuk mengenali makanan melalui foto, memperkirakan nutrisi dan kalori dengan model AI, memantau asupan, serta memberi rekomendasi buah.",
