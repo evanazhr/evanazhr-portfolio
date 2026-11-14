@@ -35,13 +35,13 @@ Setiap halaman memenuhi satu layar dan memakai panel terminal dengan area konten
 
 ## Menjalankan Secara Lokal
 
-**Prasyarat:** Node.js 20.9+ dan npm.
+**Prasyarat:** Node.js 20.9+ dan pnpm.
 
 ```bash
 git clone git@github.com:evanazhr/evanazhr-portfolio.git
 cd evanazhr-portfolio
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 Buka [http://localhost:3000](http://localhost:3000).
@@ -50,16 +50,16 @@ Buka [http://localhost:3000](http://localhost:3000).
 
 | Perintah | Fungsi |
 | --- | --- |
-| `npm run dev` | Menjalankan development server dengan Turbopack. |
-| `npm run build` | Membuat build produksi statis ke folder `out/`. |
-| `npm run lint` | Memformat `src/` dengan Prettier lalu menjalankan ESLint. |
-| `npm run lint:fix` | Sama seperti `npm run lint` (format + lint). |
+| `pnpm dev` | Menjalankan development server dengan Turbopack. |
+| `pnpm build` | Membuat build produksi statis ke folder `out/`. |
+| `pnpm lint` | Memformat `src/` dengan Prettier lalu menjalankan ESLint. |
+| `pnpm lint:fix` | Sama seperti `pnpm lint` (format + lint). |
 
 Karena proyek memakai `output: "export"`, hasil build tidak dijalankan dengan `next start`. Untuk melihat hasil statisnya:
 
 ```bash
-npm run build
-npx serve out
+pnpm build
+pnpm exec serve out
 # atau
 python3 -m http.server 4173 -d out
 ```
@@ -125,15 +125,15 @@ Build menghasilkan situs statis di `out/`.
 ### Cloudflare
 
 ```bash
-npm run build
-npx wrangler deploy
+pnpm build
+pnpm exec wrangler deploy
 ```
 
 Konfigurasi aset ada di `wrangler.jsonc` (`./out`).
 
 ### Vercel
 
-Hubungkan repositori ke Vercel dan gunakan `npm run build` sebagai build command. Konfigurasi tambahan ada di `vercel.json`.
+Hubungkan repositori ke Vercel dan gunakan `pnpm build` sebagai build command. Konfigurasi tambahan ada di `vercel.json`.
 
 ## Kontak
 

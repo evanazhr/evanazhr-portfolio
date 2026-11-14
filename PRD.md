@@ -183,7 +183,7 @@ Garis pemisah memakai warna foreground dengan opasitas rendah. Tidak ada gradien
 | `src/app/blogs/page.tsx` | Array `posts` untuk indeks blog |
 | `src/app/blogs/<slug>/page.mdx` | Isi artikel dan metadata |
 
-Menambah artikel berarti menambah folder MDX dan satu entri `posts`. Tidak ada langkah build khusus di luar `npm run build`.
+Menambah artikel berarti menambah folder MDX dan satu entri `posts`. Tidak ada langkah build khusus di luar `pnpm build`.
 
 ## 10. Kriteria penerimaan
 
