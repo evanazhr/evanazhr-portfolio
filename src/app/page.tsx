@@ -34,17 +34,13 @@ export default function Home() {
                 <span className="block">Hartana</span>
               </h1>
               <p className="text-foreground/85 mt-4 max-w-[42ch] text-base leading-7">
-                Mahasiswa Sistem Komputer yang membangun antarmuka dan layanan
-                web full stack.
+                Mahasiswa Sistem Komputer | Fullstack web developer.
               </p>
             </div>
 
             <dl className="grid grid-cols-[6rem_1fr] gap-x-4 gap-y-2 font-mono text-xs sm:text-[13px]">
-              <dt className="text-muted-foreground">role</dt>
-              <dd>Aspiring Fullstack Web Developer</dd>
               <dt className="text-muted-foreground">focus</dt>
-              <dd>React + Express.js + PostgreSQL</dd>
-              <dt className="text-muted-foreground">location</dt>
+              <dd>ReactJs + Express.js + PostgreSQL</dd> <dt className="text-muted-foreground">location</dt>
               <dd>Pandeglang, Banten, Indonesia</dd>
               <dt className="text-muted-foreground">status</dt>
               <dd className="text-success flex items-center gap-2">

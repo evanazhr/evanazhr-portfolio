@@ -21,6 +21,7 @@ export const projectItems: ProjectItem[] = [
     title: "NutriCitra",
     description:
       "Platform untuk mengenali makanan melalui foto, memperkirakan nutrisi dan kalori dengan model AI, memantau asupan, serta memberi rekomendasi buah.",
+    thumbnail :  "/assets/thumbnails/nutri-citra.png",
     link: "https://nutri-citra-project-6eik.vercel.app",
     repo: "",
     tech: ["React", "Express.js", "TailwindCSS", "Supabase"],
